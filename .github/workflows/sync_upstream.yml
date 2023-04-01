@@ -16,7 +16,7 @@ jobs:
 
       - name: Fetch upstream
         run: |
-          git remote add upstream https://github.com/original_author/project.git
+          git remote add upstream https://git.suckless.org/dwm
           git fetch upstream
 
       - name: Merge upstream changes

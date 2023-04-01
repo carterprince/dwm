@@ -13,10 +13,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_PAT }} # Add this line
 
       - name: Fetch upstream
         run: |
-          git remote add upstream https://git.suckless.org/dwm
+          git remote add upstream https://git.suckless.org/dwm/
           git fetch upstream
 
       - name: Merge upstream changes

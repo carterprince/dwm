@@ -68,6 +68,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_semicolon,  spawn,      SHCMD("actionmenu") },
     { 0,                            XK_Print,  spawn,          SHCMD("shot") },
+    { MODKEY,                       XK_m,      spawn,          SHCMD("cmus-launch") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -85,9 +86,11 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-    { MODKEY | ShiftMask,           XK_k,      spawn,          SHCMD("volume up") },
-    { MODKEY | ShiftMask,           XK_j,      spawn,          SHCMD("volume down") },
-    { MODKEY | ShiftMask,           XK_m,      spawn,          SHCMD("volume mute")   },
+    { MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("volume up") },
+    { MODKEY|ShiftMask,             XK_j,      spawn,          SHCMD("volume down") },
+    { MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("volume mute")   },
+    { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("playerctl next")   },
+    { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("playerctl previous")   },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

@@ -24,6 +24,7 @@ config.h:
 
 dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
+	rm -f config.h
 
 clean:
 	rm -f config.h dwm ${OBJ} dwm-${VERSION}.tar.gz

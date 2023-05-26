@@ -62,6 +62,7 @@
 #define HEIGHT(X)               ((X)->h + 2 * (X)->bw)
 #define TAGMASK                 ((1 << LENGTH(tags)) - 1)
 #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
+#define FRAMERATE				144
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
@@ -1254,7 +1255,7 @@ movemouse(const Arg *arg)
 			handler[ev.type](&ev);
 			break;
 		case MotionNotify:
-			if ((ev.xmotion.time - lasttime) <= (1000 / 60))
+			if ((ev.xmotion.time - lasttime) <= (1000 / FRAMERATE))
 				continue;
 			lasttime = ev.xmotion.time;
 
@@ -1437,7 +1438,7 @@ resizemouse(const Arg *arg)
 			handler[ev.type](&ev);
 			break;
 		case MotionNotify:
-			if ((ev.xmotion.time - lasttime) <= (1000 / 60))
+			if ((ev.xmotion.time - lasttime) <= (1000 / FRAMERATE))
 				continue;
 			lasttime = ev.xmotion.time;
 

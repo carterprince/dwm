@@ -72,6 +72,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_p,      spawn,          SHCMD("st -e neomutt") },
     { MODKEY,                       XK_c,      spawn,          SHCMD("quickcalc") },
     { MODKEY,                       XK_n,      spawn,          SHCMD("st -e newsboat") },
+    { MODKEY,                       XK_u,      spawn,          SHCMD("st -e lfub") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

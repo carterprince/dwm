@@ -98,7 +98,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("playerctl next")   },
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("cartctl next")   },
     { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("playerctl previous")   },
-    { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("cartctl previous")   },
+    { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("cartctl prev")   },
     { MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("playerctl play-pause")   },
     { MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("cartctl toggle")   },
 	TAGKEYS(                        XK_1,                      0)

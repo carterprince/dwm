@@ -68,7 +68,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_semicolon,  spawn,      SHCMD("actionmenu") },
     { 0,                            XK_Print,  spawn,          SHCMD("shot") },
-    { MODKEY,                       XK_m,      spawn,          SHCMD("cmus-launch") },
+    { MODKEY,                       XK_m,      spawn,          SHCMD("alacritty -e cart") },
     { MODKEY,                       XK_p,      spawn,          SHCMD("alacritty -e neomutt") },
     { MODKEY,                       XK_c,      spawn,          SHCMD("quickcalc") },
     { MODKEY,                       XK_n,      spawn,          SHCMD("alacritty -e newsboat") },

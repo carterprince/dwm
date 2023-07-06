@@ -30,7 +30,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "st-256color",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "Alacritty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
@@ -60,7 +60,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -69,10 +69,10 @@ static const Key keys[] = {
     { MODKEY,                       XK_semicolon,  spawn,      SHCMD("actionmenu") },
     { 0,                            XK_Print,  spawn,          SHCMD("shot") },
     { MODKEY,                       XK_m,      spawn,          SHCMD("cmus-launch") },
-    { MODKEY,                       XK_p,      spawn,          SHCMD("st -e neomutt") },
+    { MODKEY,                       XK_p,      spawn,          SHCMD("alacritty -e neomutt") },
     { MODKEY,                       XK_c,      spawn,          SHCMD("quickcalc") },
-    { MODKEY,                       XK_n,      spawn,          SHCMD("st -e newsboat") },
-    { MODKEY,                       XK_u,      spawn,          SHCMD("st -e lfub") },
+    { MODKEY,                       XK_n,      spawn,          SHCMD("alacritty -e newsboat") },
+    { MODKEY,                       XK_u,      spawn,          SHCMD("alacritty -e lfub") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -96,7 +96,11 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("sleep 0.25 && pkill -9 arecord") },
     { MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("volume mute")   },
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("playerctl next")   },
+    { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("cartctl next")   },
     { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("playerctl previous")   },
+    { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("cartctl previous")   },
+    { MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("playerctl play-pause")   },
+    { MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("cartctl toggle")   },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

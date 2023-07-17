@@ -79,6 +79,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_e,      zoom,           {0} },
 	{ MODKEY,                       XK_i,      spawn,          SHCMD("/usr/bin/chromium") },
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("rofi -show run") },
+    { MODKEY,                       XK_o,      spawn,          SHCMD("obsidian") },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
@@ -93,14 +94,13 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_j,      spawn,          SHCMD("volume down") },
     { MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("volume up") },
     { MODKEY|ShiftMask,             XK_i,      spawn,          SHCMD("record_audio.sh") },
-    { MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("sleep 0.25 && pkill -9 arecord") },
     { MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("volume mute")   },
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("playerctl next")   },
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("cartctl next")   },
     { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("playerctl previous")   },
     { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("cartctl prev")   },
     { MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("playerctl play-pause")   },
-    { MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("cartctl toggle")   },
+    { MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("cartctl pause")   },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

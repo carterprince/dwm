@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -68,7 +70,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_semicolon,  spawn,      SHCMD("actionmenu") },
     { 0,                            XK_Print,  spawn,          SHCMD("shot") },
-    { MODKEY,                       XK_m,      spawn,          SHCMD("alacritty -e cart") },
+    { MODKEY,                       XK_m,      spawn,          SHCMD("xdg-open https://open.spotify.com/") },
     { MODKEY,                       XK_p,      spawn,          SHCMD("alacritty -e neomutt") },
     { MODKEY,                       XK_c,      spawn,          SHCMD("quickcalc") },
     { MODKEY,                       XK_n,      spawn,          SHCMD("alacritty -e newsboat") },
@@ -101,6 +103,9 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("cartctl prev")   },
     { MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("playerctl play-pause")   },
     { MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("cartctl pause")   },
+    { 0,                            XF86XK_AudioLowerVolume,  spawn, SHCMD("volume down") },
+    { 0,                            XF86XK_AudioRaiseVolume,  spawn, SHCMD("volume up") },
+    { 0,                            XF86XK_AudioMute,         spawn, SHCMD("shot") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

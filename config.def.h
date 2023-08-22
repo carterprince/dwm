@@ -79,7 +79,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_e,      zoom,           {0} },
-	{ MODKEY,                       XK_i,      spawn,          SHCMD("/run/current-system/sw/bin/brave") },
+	{ MODKEY,                       XK_i,      spawn,          SHCMD("brave") },
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("rofi -show run") },
     { MODKEY,                       XK_o,      spawn,          SHCMD("obsidian") },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },

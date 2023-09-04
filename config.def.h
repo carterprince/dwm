@@ -67,7 +67,7 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-    { MODKEY,                       XK_m,      spawn,          SHCMD("mpv --video-zoom=-0.25 --keepaspect-window=no --autofit=100\% --fullscreen=no --shuffle --audio-pitch-correction=no --speed=1.11 --title='My Liked Songs' $HOME/media/music") },
+    { MODKEY,                       XK_m,      spawn,          SHCMD("playsongs") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_semicolon,  spawn,      SHCMD("actionmenu") },

@@ -10,11 +10,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=18" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#000000";
-static const char col_gray2[]       = "#000000";
-static const char col_gray3[]       = "#ffffff";
-static const char col_gray4[]       = "#000000";
-static const char col_cyan[]        = "#ffffff";
+static const char col_gray1[]       = "#272727";
+static const char col_gray2[]       = "#272727";
+static const char col_gray3[]       = "#e9d9b0";
+static const char col_gray4[]       = "#272727";
+static const char col_cyan[]        = "#e9d9b0";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -30,10 +30,11 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "st",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	//{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "googlemessages-nativefier-11f104", NULL,     NULL,           1 << 6,    0,          0,          -1,        -1 },
+	{ NULL,                               NULL,     "My Liked Songs",           1 << 5,    0,          0,          -1,        -1 },
+	{ "st",                               NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,                               NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -44,8 +45,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "[M]",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      monocle },
 };
 
 /* key definitions */
@@ -66,11 +67,11 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+    { MODKEY,                       XK_m,      spawn,          SHCMD("mpv --video-zoom=-0.25 --keepaspect-window=no --autofit=100\% --fullscreen=no --shuffle --audio-pitch-correction=no --speed=1.11 --title='My Liked Songs' $HOME/media/music") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_semicolon,  spawn,      SHCMD("actionmenu") },
     { 0,                            XK_Print,  spawn,          SHCMD("shot") },
-    { MODKEY,                       XK_m,      spawn,          SHCMD("mpv --keepaspect-window=no --autofit=100\% --fullscreen=no --shuffle --audio-pitch-correction=no --speed=1.11 $HOME/music") },
     { MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("xdg-open https://open.spotify.com/") },
     { MODKEY,                       XK_p,      spawn,          SHCMD("st -e neomutt") },
     { MODKEY,                       XK_c,      spawn,          SHCMD("quickcalc") },
